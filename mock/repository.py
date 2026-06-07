@@ -80,3 +80,5 @@ def mock_geo_minutes(geo_a: str, geo_b: str) -> int:
 
 # LearnedSignals 持久化路径（flywheel 使用）
 LEARNED_SIGNALS_PATH = os.path.join(_DATA_DIR, "learned_signals.json")
+# RunRecord 历史留痕路径（reflect / history 命令读取，JSON Lines 追加）
+RUNS_PATH = os.path.join(_DATA_DIR, "runs.jsonl")

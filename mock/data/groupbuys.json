@@ -9,5 +9,9 @@
   {"id": "gb_salad", "merchant_id": "res_salad", "title": "轻食单人午市", "price": 35.0, "save": 15.0},
   {"id": "gb_themepark", "merchant_id": "act_themepark", "title": "游乐场畅玩票", "price": 199.0, "save": 101.0},
   {"id": "gb_yoga", "merchant_id": "act_yoga", "title": "瑜伽体验单次", "price": 59.0, "save": 41.0},
-  {"id": "gb_brunch", "merchant_id": "res_brunch", "title": "早午餐单人套餐", "price": 78.0, "save": 22.0}
+  {"id": "gb_brunch", "merchant_id": "res_brunch", "title": "早午餐单人套餐", "price": 78.0, "save": 22.0},
+  {"id": "gb_pizza", "merchant_id": "res_pizza", "title": "亲子披萨DIY双人", "price": 138.0, "save": 60.0},
+  {"id": "gb_aquarium", "merchant_id": "act_aquarium", "title": "海洋馆亲子票", "price": 158.0, "save": 72.0},
+  {"id": "gb_winebar", "merchant_id": "res_winebar", "title": "双人葡萄酒餐", "price": 288.0, "save": 96.0},
+  {"id": "gb_climb", "merchant_id": "act_climb", "title": "攀岩双人体验", "price": 118.0, "save": 42.0}
 ]

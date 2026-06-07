@@ -57,6 +57,8 @@ from core.flywheel import LearnedSignals, SessionState, RunRecord
 ## Plan / PlanSlot
 - **导入路径**：`from core.planner import Plan, PlanSlot`（真源 `models/plan.py`）
 - **生产**：`core.planner.generate_plans(...) -> list[Plan]`；排序由 `core.constraint_engine.rank(plans, use_route_weight=True)` 完成，并写入 `score`。
+- **A/B 选取**：`core.planner.select_ab(ranked) -> list[Plan]`，返回差异化的 A/B
+  （B 取得分最高且主活动与 A 不同的方案；保证 route_minutes 或途经区域有区分）。
 
 ### Plan
 | 字段 | 类型 | 必选 | 说明 |
@@ -141,10 +143,15 @@ op ∈ {true,false,eq,ne,in,contains}。
 |---|---|---|---|
 | user_pref_deltas | dict[str,float] | 否 | field → 软权重增量 |
 | merchant_signals | dict[str,float] | 否 | merchant_id → 偏好增量 |
-| scenario_overrides | dict[str,dict] | 否 | scenario_id → {field: delta} |
+| scenario_overrides | dict[str,dict] | 否 | scenario_id → {field: delta}；**场景优先**：在该场景下覆盖全局 user_pref_deltas 并叠加于模板权重之上 |
 | last_updated | str | 否 | ISO 时间戳 |
 
 - **方法**：`to_dict()->dict`、`from_dict(d)->LearnedSignals`（classmethod）、`is_empty()->bool`。
+- **权重优先级**（`core.planner.build_constraints` 内）：某字段若出现在
+  `scenario_overrides[scenario_id]`，则该场景下全局 `user_pref_deltas` 同字段让位，
+  改由场景覆盖项加权（叠加在模板 `weight_overrides` 之上）。覆盖不跨场景。
+- **历史留痕**：`Flywheel.save_run(record)` 追加写 `mock/data/runs.jsonl`，
+  `Flywheel.load_runs() -> list[dict]` 供 reflect/history 读取；`emit(persist=True)` 自动落盘信号与 run。
 
 ---
 

@@ -106,6 +106,62 @@ class TestAcceptance(unittest.TestCase):
 
         os.remove(path)
 
+    def test_four_scenarios_ab_differentiated(self):
+        cases = {
+            "family": "带孩子周末出去玩晒太阳吃顿好的",
+            "friend": "和闺蜜一帮人聚一下玩起来吃正餐",
+            "date": "情侣约会拍照出片找地方坐坐",
+            "solo": "一个人放松随便逛逛喝咖啡",
+        }
+        for sc, goal in cases.items():
+            intent, scenario, _, ranked = pipeline(goal, self.profile)
+            self.assertEqual(scenario.id, sc)
+            ab = planner.select_ab(ranked)
+            self.assertEqual(len(ab), 2, f"{sc} 未产出 A/B 双方案")
+            a, b = ab
+            route_diff = abs(a.route_minutes - b.route_minutes)
+            zones_differ = set(a.geo_path()) != set(b.geo_path())
+            self.assertTrue(route_diff >= 15 or zones_differ,
+                            f"{sc} A/B 区分不足: routeΔ={route_diff} zonesDiffer={zones_differ}")
+            self.assertTrue(all(p.route_minutes >= 0 for p in ab))
+
+    def test_scenario_overrides_cross_session(self):
+        path = os.path.join(os.path.dirname(__file__), "_tmp_over.json")
+        runs = os.path.join(os.path.dirname(__file__), "_tmp_over_runs.jsonl")
+        for p in (path, runs):
+            if os.path.exists(p):
+                os.remove(p)
+        fw = Flywheel(path=path, runs_path=runs)
+        goal = "一个人就近躺平喝咖啡"
+
+        def eff_weight(c):
+            return sum(s.weight for s in c.soft if s.field == "effort")
+
+        # 会话1：表达 effort，结束后沉淀 scenario_overrides[solo]
+        s1 = fw.load()
+        i1, sc1, c1, r1 = pipeline(goal, self.profile, s1)
+        base = eff_weight(c1)
+        s1, _ = fw.emit(s1, i1, sc1.id, r1[0])
+        self.assertIn("effort", s1.scenario_overrides.get("solo", {}))
+
+        # 会话2：scenario_overrides 介入 → effort 权重提升，全局 user_pref 让位
+        s2 = fw.load()
+        _, _, c2, _ = pipeline(goal, self.profile, s2)
+        self.assertGreater(eff_weight(c2), base)
+        self.assertTrue(any(s.field == "effort" and "覆盖" in s.reason for s in c2.soft))
+        self.assertFalse(any(s.field == "effort" and "全局" in s.reason for s in c2.soft))
+
+        # 跨场景不串：solo 的 effort 覆盖不作用于 family
+        fi, fsc, fc, _ = pipeline("带孩子就近躺平吃顿好的", self.profile, s2)
+        self.assertEqual(fsc.id, "family")
+        self.assertLess(eff_weight(fc), eff_weight(c2))
+
+        # runs 留痕可读
+        self.assertTrue(fw.load_runs())
+        for p in (path, runs):
+            if os.path.exists(p):
+                os.remove(p)
+
     def test_fallback_participates_in_signals(self):
         intent, scenario, constraint, ranked = pipeline("我一个人拍照出片喝咖啡", self.profile)
         new_plan, diff = replanner.replan(ranked[0], slot_index=0, constraint=constraint,

@@ -184,6 +184,65 @@ def report_replan(profile):
         print(f"新方案 : {new_plan.summary()}")
 
 
+def report_four_scenarios_ab(profile):
+    hr("⑧ 四场景 A/B 双方案样本（route_minutes / 途经区域有区分）")
+    cases = [
+        ("family", "带孩子周末出去玩晒太阳吃顿好的"),
+        ("friend", "和闺蜜一帮人聚一下玩起来吃正餐"),
+        ("date", "情侣约会拍照出片找地方坐坐"),
+        ("solo", "一个人放松随便逛逛喝咖啡"),
+    ]
+    for label, goal in cases:
+        intent, scenario, constraint, ranked = run_pipeline(goal, profile)
+        ab = planner.select_ab(ranked)
+        a = ab[0]
+        b = ab[1] if len(ab) > 1 else None
+        print(f"\n--- {scenario.id} | «{goal}» ---")
+        print(f"  A: {a.summary()}")
+        if b:
+            print(f"  B: {b.summary()}")
+            zones_differ = set(a.geo_path()) != set(b.geo_path())
+            print(f"  区分: route Δ={abs(a.route_minutes - b.route_minutes)}min, 途经区域不同={zones_differ}")
+            gb_a = [s.groupbuy_id for s in a.slots if s.groupbuy_id]
+            gb_b = [s.groupbuy_id for s in b.slots if s.groupbuy_id]
+            print(f"  团购: A={gb_a or '无'} B={gb_b or '无'}")
+
+
+def report_solo_override(profile):
+    hr("⑨ solo 飞轮注入前后权重变化（scenario_overrides 跨会话生效）")
+    path = os.path.join(os.path.dirname(LEARNED_SIGNALS_PATH), "_demo_override.json")
+    runs = os.path.join(os.path.dirname(LEARNED_SIGNALS_PATH), "_demo_override_runs.jsonl")
+    for p in (path, runs):
+        if os.path.exists(p):
+            os.remove(p)
+    fw = Flywheel(path=path, runs_path=runs)
+    goal = "一个人就近躺平喝咖啡"
+
+    def eff_weight(c):
+        return sum(s.weight for s in c.soft if s.field == "effort")
+
+    # 会话1
+    s1 = fw.load()
+    i1, sc1, c1, ranked1 = run_pipeline(goal, profile, s1)
+    print(f"\n[会话1·solo] effort 有效软权重 = {eff_weight(c1):.2f}（intent {i1.effort} + 模板）")
+    s1, _ = fw.emit(s1, i1, sc1.id, ranked1[0], feedback="like")
+    print(f"  emit → scenario_overrides[solo] = {s1.scenario_overrides.get('solo')}")
+
+    # 会话2（注入后）
+    s2 = fw.load()
+    i2, sc2, c2, _ = run_pipeline(goal, profile, s2)
+    print(f"[会话2·solo] effort 有效软权重 = {eff_weight(c2):.2f}（scenario_overrides 叠加，全局 user_pref 让位）")
+    ov = [s.reason for s in c2.soft if s.field == "effort" and "覆盖" in s.reason]
+    print(f"  覆盖项: {ov}")
+
+    # family 对照：solo 的 override 不跨场景
+    fi, fsc, fc, _ = run_pipeline("带孩子就近躺平吃顿好的", profile, s2)
+    print(f"[对照·family] effort 有效软权重 = {eff_weight(fc):.2f}（family 模板无 effort 权重，solo 覆盖不跨场景）")
+    for p in (path, runs):
+        if os.path.exists(p):
+            os.remove(p)
+
+
 def main():
     # 清掉历史信号，保证整次演示可复现
     if os.path.exists(LEARNED_SIGNALS_PATH):
@@ -201,6 +260,8 @@ def main():
     report_route_toggle(profile)
     report_two_sessions(profile)
     report_replan(profile)
+    report_four_scenarios_ab(profile)
+    report_solo_override(profile)
     print("\n全部验收项执行完毕。")
 
 

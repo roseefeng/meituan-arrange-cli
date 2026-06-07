@@ -87,15 +87,22 @@ def build_constraints(
                                    reason=f"家庭档案: 长期偏好 {field}={val}", target=target))
 
     # ---------- 历史学习（飞轮注入） ----------
+    # 场景级覆盖优先：scenario_overrides 中出现的字段，在本场景下"替代"全局 user_pref_deltas，
+    # 并叠加在模板权重之上以突出加权。
+    sc_over = signals.scenario_overrides.get(scenario.id, {})
+    override_fields = set(sc_over.keys())
+
     for field, delta in signals.user_pref_deltas.items():
+        if field in override_fields:
+            continue  # 本场景下让位给场景级覆盖（scenario_overrides 优先）
         target = getattr(intent, field, None) if field in _DIMENSION_FIELDS else None
         c.soft.append(SoftPref(field=field, weight=delta, source=SOURCE_LEARNED,
-                               reason=f"历史学习: 用户偏好增量 {field}={delta:+.2f}", target=target))
-    sc_over = signals.scenario_overrides.get(scenario.id, {})
+                               reason=f"历史学习: 全局用户偏好增量 {field}={delta:+.2f}", target=target))
+
     for field, delta in sc_over.items():
         target = getattr(intent, field, None) if field in _DIMENSION_FIELDS else None
         c.soft.append(SoftPref(field=field, weight=delta, source=SOURCE_LEARNED,
-                               reason=f"历史学习: 场景{scenario.id}增量 {field}={delta:+.2f}",
+                               reason=f"历史学习: 场景{scenario.id}覆盖(优先) {field}={delta:+.2f}",
                                target=target))
 
     return c
@@ -135,6 +142,8 @@ def generate_plans(
             # 商家信号（历史学习）：命中则加成
             soft += signals.merchant_signals.get(act.id, 0.0)
             soft += signals.merchant_signals.get(res.id, 0.0)
+            # 团购优惠：有券的商户获得与节省额成正比的小幅加成，使含券方案与无券方案产生差异
+            soft += _groupbuy_bonus(repo, act.id) + _groupbuy_bonus(repo, res.id)
 
             risk = engine.apply_risk([act, res], risk_rules)
             route = repo.mock_geo_minutes(home, act.geo) + repo.mock_geo_minutes(act.geo, res.geo)
@@ -155,6 +164,27 @@ def generate_plans(
             )
             plans.append(plan)
     return plans
+
+
+def select_ab(ranked: List[Plan]) -> List[Plan]:
+    """从已排序方案中挑出差异化的 A/B：B 取得分最高、且主活动与 A 不同的方案，
+    使两套方案在活动/动线上有明显区分；无可区分项时回退到次高分方案。"""
+    if not ranked:
+        return []
+    a = ranked[0]
+    a_act = a.slots[0].ref_id if a.slots else None
+    b = next((p for p in ranked[1:] if (p.slots[0].ref_id if p.slots else None) != a_act), None)
+    if b is None:
+        b = ranked[1] if len(ranked) > 1 else None
+    return [a, b] if b is not None else [a]
+
+
+_GROUPBUY_SAVE_WEIGHT = 0.01   # 每元节省折算的软分加成
+
+
+def _groupbuy_bonus(repo, merchant_id: str) -> float:
+    gb = repo.groupbuy_for(merchant_id)
+    return gb.save * _GROUPBUY_SAVE_WEIGHT if gb else 0.0
 
 
 def _assign_windows(slots: List[PlanSlot], start_hour: int = 10) -> None:

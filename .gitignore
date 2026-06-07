@@ -4,3 +4,4 @@ __pycache__/
 .idea/
 .vscode/
 mock/data/learned_signals.json
+mock/data/runs.jsonl
