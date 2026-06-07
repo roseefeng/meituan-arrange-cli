@@ -1,0 +1,2 @@
+# meituan-arrange-cli runs on the Python standard library only.
+# No third-party dependencies. Python 3.10+ recommended.
