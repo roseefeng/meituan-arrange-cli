@@ -143,6 +143,7 @@ def generate_plans(
                 _slot("activity", act, repo),
                 _slot("meal", res, repo),
             ]
+            _assign_windows(slots)
             plan = Plan(
                 id=f"{scenario.id}:{act.id}+{res.id}",
                 scenario_id=scenario.id,
@@ -150,9 +151,19 @@ def generate_plans(
                 route_minutes=route,
                 soft_score=soft,
                 risk_penalty=risk,
+                title=f"{scenario.label}·{act.name}+{res.name}",
             )
             plans.append(plan)
     return plans
+
+
+def _assign_windows(slots: List[PlanSlot], start_hour: int = 10) -> None:
+    """为每个 slot 顺序排出时间窗 'HH:MM-HH:MM'（以 10:00 起，按 duration 累加）。"""
+    cursor = start_hour * 60
+    for s in slots:
+        begin, end = cursor, cursor + s.duration_min
+        s.window = f"{begin // 60:02d}:{begin % 60:02d}-{end // 60:02d}:{end % 60:02d}"
+        cursor = end + 15  # 含 15 分钟缓冲
 
 
 def _slot(kind: str, item, repo) -> PlanSlot:

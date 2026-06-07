@@ -13,6 +13,7 @@ from models import Profile, LearnedSignals, SOURCE_LEARNED
 from core import intent_parser, scenario_router, planner
 from core.constraint_engine import rank
 from core.flywheel import Flywheel
+from core import replanner
 
 
 def pipeline(goal, profile, signals=None):
@@ -80,6 +81,45 @@ class TestAcceptance(unittest.TestCase):
         self.assertTrue(learned)
 
         os.remove(path)
+
+    def test_flywheel_evolves_and_persists(self):
+        path = os.path.join(os.path.dirname(__file__), "_tmp_evo.json")
+        if os.path.exists(path):
+            os.remove(path)
+        fw = Flywheel(path=path)
+
+        # 会话1：空白起步 → emit 至少 3 条历史学习项并落盘
+        s1 = fw.load()
+        self.assertTrue(s1.is_empty())
+        i1, sc1, _, r1 = pipeline("我一个人拍照出片喝咖啡", self.profile, s1)
+        s1, rec1 = fw.emit(s1, i1, sc1.id, r1[0], feedback="like")
+        self.assertGreaterEqual(len(rec1.signals_emitted), 3)
+        self.assertTrue(os.path.exists(path))
+
+        # 会话2：加载持久化信号 → 再次 emit 应在原值上演化（增量变大）
+        s2 = fw.load()
+        self.assertFalse(s2.is_empty())
+        before = dict(s2.user_pref_deltas)
+        i2, sc2, _, r2 = pipeline("我一个人拍照出片喝咖啡", self.profile, s2)
+        s2, _ = fw.emit(s2, i2, sc2.id, r2[0], feedback="like")
+        self.assertGreater(s2.user_pref_deltas["vibe"], before["vibe"])
+
+        os.remove(path)
+
+    def test_fallback_participates_in_signals(self):
+        intent, scenario, constraint, ranked = pipeline("我一个人拍照出片喝咖啡", self.profile)
+        new_plan, diff = replanner.replan(ranked[0], slot_index=0, constraint=constraint,
+                                          profile=self.profile, fallback_triggered=True)
+        self.assertIsNotNone(diff)
+        self.assertTrue(diff.fallback_triggered)
+        self.assertTrue(new_plan.rejected_merchants)
+
+        fw = Flywheel(path=os.path.join(os.path.dirname(__file__), "_tmp_fb.json"))
+        sig, rec = fw.emit(LearnedSignals(), intent, scenario.id, new_plan,
+                           feedback="like", replanned=True,
+                           fallback_triggered=True, persist=False)
+        self.assertTrue(rec.fallback_triggered)
+        self.assertTrue(any("fallback" in s for s in rec.signals_emitted))
 
 
 if __name__ == "__main__":

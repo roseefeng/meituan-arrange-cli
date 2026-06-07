@@ -74,6 +74,12 @@ def replan(
             best_plan = trial
             best_cand = cand
 
+    # 记录锁定项与（兜底场景下）被淘汰商家，供 RunRecord/flywheel 使用
+    best_plan.locked_items = [s.slot_id for i, s in enumerate(plan.slots) if i != slot_index]
+    best_plan.flexible_items = [plan.slots[slot_index].slot_id]
+    if fallback_triggered:
+        best_plan.rejected_merchants = [target_slot.ref_id]
+
     locked = [s.name for i, s in enumerate(plan.slots) if i != slot_index]
     diff = ReplanDiff(
         slot_index=slot_index,

@@ -9,6 +9,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+# IntentFrame 的定义真源在 models/intent.py，此处再导出，
+# 使 `from core.intent_ontology import IntentFrame` 可用。
+from models import IntentFrame  # noqa: F401
+
 # 单值维度
 VIBE = "vibe"
 SETTING = "setting"

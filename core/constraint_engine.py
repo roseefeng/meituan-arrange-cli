@@ -8,7 +8,8 @@ from __future__ import annotations
 
 from typing import Callable, Dict, List
 
-from models import HardConstraint, RiskRule, SoftPref, Plan
+# 约束类的定义真源在 models/，此处再导出，使 `from core.constraint_engine import ...` 可用
+from models import Constraint, ConstraintItem, RiskItem, HardConstraint, RiskRule, SoftPref, Plan
 
 # 有序量纲，用于 effort / spend 的渐进匹配
 _EFFORT_SCALE = {"躺平": 0, "轻度": 1, "能折腾": 2}
@@ -125,4 +126,5 @@ def rank(plans: List[Plan], use_route_weight: bool = True) -> List[Plan]:
         if use_route_weight:
             total -= route_penalty(p.route_minutes)
         p.total_score = total
+        p.score = total  # 对外契约字段镜像
     return sorted(plans, key=lambda p: p.total_score, reverse=True)

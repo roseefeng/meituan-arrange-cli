@@ -7,12 +7,14 @@ import os
 from datetime import datetime, timezone
 from typing import List, Optional
 
-from models import LearnedSignals, RunRecord, IntentFrame, Plan
+# 定义真源在 models/，此处再导出，使 `from core.flywheel import ...` 可用
+from models import LearnedSignals, RunRecord, IntentFrame, Plan, SessionState  # noqa: F401
 from mock.repository import LEARNED_SIGNALS_PATH
 
 _DIMENSION_FIELDS = {"vibe", "setting", "effort", "spend", "meal_focus"}
 _PREF_STEP = 0.2          # 正反馈对维度偏好的增量
 _MERCHANT_STEP = 0.5      # 正反馈对商家信号的增量
+_FALLBACK_STEP = 0.3      # 兜底事件对场景韧性的增量
 
 
 class Flywheel:
@@ -66,6 +68,19 @@ class Flywheel:
                 cur = signals.merchant_signals.get(slot.ref_id, 0.0)
                 signals.merchant_signals[slot.ref_id] = round(cur + direction * _MERCHANT_STEP, 3)
                 emitted.append(f"merchant:{slot.ref_id}{direction * _MERCHANT_STEP:+.2f}")
+
+            # 兜底事件参与信号生成：
+            # 1) 对被兜底淘汰的商家施加负向信号，下次降低其优先级；
+            # 2) 在场景层累加"兜底韧性"增量，提示该场景需要更稳的候选。
+            if fallback_triggered:
+                for mid in getattr(chosen_plan, "rejected_merchants", []) or []:
+                    cur = signals.merchant_signals.get(mid, 0.0)
+                    signals.merchant_signals[mid] = round(cur - _MERCHANT_STEP, 3)
+                    emitted.append(f"merchant:{mid}-{_MERCHANT_STEP:.2f}(fallback)")
+                over = signals.scenario_overrides.setdefault(scenario_id, {})
+                over["fallback_resilience"] = round(
+                    over.get("fallback_resilience", 0.0) + _FALLBACK_STEP, 3)
+                emitted.append(f"scenario[{scenario_id}]:fallback_resilience+{_FALLBACK_STEP:.2f}")
 
         signals.last_updated = datetime.now(timezone.utc).isoformat()
 
