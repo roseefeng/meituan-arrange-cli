@@ -40,6 +40,8 @@ class Repository:
         self.restaurants: List[Restaurant] = [Restaurant(**d) for d in _load_json("restaurants.json")]
         self.groupbuys: List[GroupBuy] = [GroupBuy(**d) for d in _load_json("groupbuys.json")]
         self._gb_by_merchant: Dict[str, GroupBuy] = {g.merchant_id: g for g in self.groupbuys}
+        # 预置的"自身状态变更"模拟输入（单人场景端到端脚本调用）
+        self.self_state_inputs: List[dict] = _load_json("self_state_inputs.json")
 
     # ----- 候选查询 -----
     def activities_for(self, scenario_id: str) -> List[Activity]:
@@ -50,6 +52,9 @@ class Repository:
 
     def groupbuy_for(self, merchant_id: str) -> Optional[GroupBuy]:
         return self._gb_by_merchant.get(merchant_id)
+
+    def self_state_input(self, input_id: str) -> Optional[dict]:
+        return next((s for s in self.self_state_inputs if s["id"] == input_id), None)
 
     # ----- 动线近似 -----
     def mock_geo_minutes(self, geo_a: str, geo_b: str) -> int:

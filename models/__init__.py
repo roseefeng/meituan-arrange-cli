@@ -12,6 +12,10 @@ from .signals import LearnedSignals
 from .session import SessionState
 from .record import RunRecord
 from .catalog import Activity, Restaurant, GroupBuy
+from .presenter import (
+    render_user, render_verbose, assert_user_safe, format_user, format_verbose,
+    USER_KEYS, VERBOSE_EXTRA_KEYS,
+)
 
 __all__ = [
     "IntentFrame",
@@ -34,4 +38,11 @@ __all__ = [
     "Activity",
     "Restaurant",
     "GroupBuy",
+    "render_user",
+    "render_verbose",
+    "assert_user_safe",
+    "format_user",
+    "format_verbose",
+    "USER_KEYS",
+    "VERBOSE_EXTRA_KEYS",
 ]

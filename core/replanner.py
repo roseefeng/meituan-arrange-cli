@@ -9,9 +9,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import List, Optional
 
-from models import Plan, PlanSlot, Constraint, LearnedSignals, Profile
+from models import Plan, PlanSlot, Constraint, LearnedSignals, Profile, SessionState
 from core import constraint_engine as engine
-from core.planner import _slot
+from core.planner import _slot, _assign_windows
 from mock.repository import get_repository
 
 
@@ -119,6 +119,143 @@ def _swap(plan, slot_index, cand, repo, home, soft_prefs, risk_rules, signals) -
     )
     engine.rank([new_plan], use_route_weight=True)  # 写入 total_score
     return new_plan
+
+
+# ---------------------------------------------------------------------------
+# 自身状态变更驱动的重规划（单人场景）：无需外部反馈，依据用户自身状态直接触发。
+# ---------------------------------------------------------------------------
+
+# 自身状态关键词 → 动作
+_SELF_STATE_RULES = [
+    ("shorten", ("太累", "累了", "缩短", "取消后面", "后面的活动取消", "不想去了", "早点回", "想回家")),
+    ("extend_meal", ("延长用餐", "多坐会", "多坐一会", "再坐会", "慢慢吃", "多待会")),
+]
+
+_EXTEND_MINUTES = 30
+
+
+@dataclass
+class SelfStateDiff:
+    action: str            # shorten / extend_meal
+    trigger: str           # 命中的自身状态短语
+    detail: str            # 人类可读变更说明
+    delta_route_minutes: int
+    locked: List[str]      # 保留（锁定）的 slot 名称
+
+    def describe(self) -> str:
+        return (f"[自身状态·{self.action}] «{self.trigger}» → {self.detail} "
+                f"(保留: {', '.join(self.locked)}) Δroute={self.delta_route_minutes:+d}min")
+
+
+def detect_self_state(text: str) -> Optional[str]:
+    """从用户自述文本判定自身状态动作；无命中返回 None。"""
+    for action, kws in _SELF_STATE_RULES:
+        for kw in kws:
+            if kw in (text or ""):
+                return action
+    return None
+
+
+def replan_on_self_state(
+    session: SessionState,
+    self_state_text: str,
+    profile: Optional[Profile] = None,
+    repo=None,
+):
+    """单人场景：当 SessionState 侦测到用户自身状态变化时，无需外部反馈直接重规划。
+
+    返回 (new_plan, SelfStateDiff)。同时把结果写回 session.current_plan，
+    并将 current_exec_state 置为 'replanned'。无可执行动作时返回 (current_plan, None)。
+    """
+    repo = repo or get_repository()
+    plan = session.current_plan
+    if plan is None:
+        return None, None
+
+    action = detect_self_state(self_state_text)
+    if action is None:
+        return plan, None
+
+    home = profile.home_geo if profile else "central"
+
+    if action == "shorten":
+        new_plan, diff = _shorten(plan, self_state_text, repo, home)
+    elif action == "extend_meal":
+        new_plan, diff = _extend_meal(plan, self_state_text)
+    else:
+        return plan, None
+
+    session.current_plan = new_plan
+    session.current_exec_state = "replanned"
+    return new_plan, diff
+
+
+def _shorten(plan: Plan, trigger: str, repo, home: str):
+    """缩短行程：取消首个之后的所有 slot（保留主活动/首项），重算动线与时间窗。"""
+    if len(plan.slots) <= 1:
+        return plan, None
+    kept = [plan.slots[0]]
+    dropped = [s.name for s in plan.slots[1:]]
+
+    new_slots = [PlanSlot(**{k: getattr(kept[0], k) for k in (
+        "kind", "ref_id", "name", "geo", "duration_min", "groupbuy_id",
+        "groupbuy_save", "slot_id", "window")})]
+    _assign_windows(new_slots)
+    route = repo.mock_geo_minutes(home, new_slots[0].geo)
+
+    new_plan = Plan(
+        id=f"{plan.id}|self:shorten",
+        scenario_id=plan.scenario_id,
+        slots=new_slots,
+        route_minutes=route,
+        soft_score=plan.soft_score,
+        risk_penalty=plan.risk_penalty,
+        title=plan.title,
+        locked_items=[new_slots[0].slot_id],
+        flexible_items=[],
+        notes=list(plan.notes) + [f"自身状态缩短：取消 {', '.join(dropped)}"],
+    )
+    engine.rank([new_plan], use_route_weight=True)
+    diff = SelfStateDiff(
+        action="shorten", trigger=trigger.strip(),
+        detail=f"取消 {', '.join(dropped)}，仅保留 {new_slots[0].name}",
+        delta_route_minutes=route - plan.route_minutes,
+        locked=[new_slots[0].name],
+    )
+    return new_plan, diff
+
+
+def _extend_meal(plan: Plan, trigger: str):
+    """延长用餐：增加 meal slot 时长，顺延后续时间窗，动线不变。"""
+    new_slots = [PlanSlot(**{k: getattr(s, k) for k in (
+        "kind", "ref_id", "name", "geo", "duration_min", "groupbuy_id",
+        "groupbuy_save", "slot_id", "window")}) for s in plan.slots]
+    target = next((s for s in new_slots if s.kind == "meal"), None)
+    if target is None:
+        return plan, None
+    target.duration_min += _EXTEND_MINUTES
+    _assign_windows(new_slots)
+
+    new_plan = Plan(
+        id=f"{plan.id}|self:extend_meal",
+        scenario_id=plan.scenario_id,
+        slots=new_slots,
+        route_minutes=plan.route_minutes,
+        soft_score=plan.soft_score,
+        risk_penalty=plan.risk_penalty,
+        title=plan.title,
+        locked_items=[s.slot_id for s in new_slots],
+        flexible_items=[],
+        notes=list(plan.notes) + [f"自身状态延长用餐 +{_EXTEND_MINUTES} 分钟"],
+    )
+    engine.rank([new_plan], use_route_weight=True)
+    diff = SelfStateDiff(
+        action="extend_meal", trigger=trigger.strip(),
+        detail=f"{target.name} 用餐延长 +{_EXTEND_MINUTES} 分钟，后续时间窗顺延",
+        delta_route_minutes=0,
+        locked=[s.name for s in new_slots],
+    )
+    return new_plan, diff
 
 
 def _resolve(slot: PlanSlot, repo):

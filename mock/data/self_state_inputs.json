@@ -1,0 +1,5 @@
+[
+  {"id": "solo_tired_cancel", "scenario": "solo", "text": "太累了，后面的活动取消", "expect_action": "shorten"},
+  {"id": "solo_extend_meal", "scenario": "solo", "text": "这家不错，想多坐会慢慢吃", "expect_action": "extend_meal"},
+  {"id": "solo_go_home", "scenario": "solo", "text": "有点累了想早点回家", "expect_action": "shorten"}
+]

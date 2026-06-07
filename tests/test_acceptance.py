@@ -9,11 +9,15 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from models import Profile, LearnedSignals, SOURCE_LEARNED
+from models import (
+    Profile, LearnedSignals, SessionState, SOURCE_LEARNED,
+    render_user, render_verbose, assert_user_safe, USER_KEYS, VERBOSE_EXTRA_KEYS,
+)
 from core import intent_parser, scenario_router, planner
 from core.constraint_engine import rank
 from core.flywheel import Flywheel
 from core import replanner
+from mock.repository import get_repository
 
 
 def pipeline(goal, profile, signals=None):
@@ -161,6 +165,85 @@ class TestAcceptance(unittest.TestCase):
         for p in (path, runs):
             if os.path.exists(p):
                 os.remove(p)
+
+    def test_self_state_replan_solo(self):
+        intent, scenario, constraint, ranked = pipeline("一个人放松随便逛逛喝咖啡", self.profile)
+        self.assertEqual(scenario.id, "solo")
+        session = SessionState(current_intent=intent, current_plan=ranked[0],
+                               scenario_id="solo", current_exec_state="planned")
+
+        # 预置模拟输入存在
+        preset = get_repository().self_state_input("solo_tired_cancel")
+        self.assertIsNotNone(preset)
+
+        # 缩短：无需外部反馈直接触发
+        new_plan, diff = replanner.replan_on_self_state(session, preset["text"], self.profile)
+        self.assertIsNotNone(diff)
+        self.assertEqual(diff.action, "shorten")
+        self.assertLess(len(new_plan.slots), len(ranked[0].slots))
+        self.assertEqual(session.current_exec_state, "replanned")
+        self.assertIs(session.current_plan, new_plan)
+
+        # 延长用餐：动线不变、用餐时长增加
+        s2 = SessionState(current_plan=ranked[0], scenario_id="solo")
+        meal_before = next(s.duration_min for s in ranked[0].slots if s.kind == "meal")
+        p2, d2 = replanner.replan_on_self_state(s2, "想多坐会慢慢吃", self.profile)
+        self.assertEqual(d2.action, "extend_meal")
+        meal_after = next(s.duration_min for s in p2.slots if s.kind == "meal")
+        self.assertGreater(meal_after, meal_before)
+        self.assertEqual(p2.route_minutes, ranked[0].route_minutes)
+
+    def test_two_session_observable_plan_diff(self):
+        path = os.path.join(os.path.dirname(__file__), "_tmp_2s.json")
+        runs = os.path.join(os.path.dirname(__file__), "_tmp_2s.jsonl")
+        for p in (path, runs):
+            if os.path.exists(p):
+                os.remove(p)
+        fw = Flywheel(path=path, runs_path=runs)
+        prof = Profile(home_geo="central")
+        goal = "一个人放松随便逛逛喝咖啡"
+
+        s1 = fw.load()
+        self.assertTrue(s1.is_empty())
+        i1, sc1, _, r1 = pipeline(goal, prof, s1)
+        a1 = planner.select_ab(r1)[0]
+        self.assertIn("res_noodle", [s.ref_id for s in a1.slots])
+        s1, _ = fw.emit(s1, i1, sc1.id, a1, feedback="dislike")
+        self.assertEqual(s1.merchant_signals["res_noodle"], -0.5)
+
+        s2 = fw.load()
+        self.assertFalse(s2.is_empty())
+        i2, sc2, _, r2 = pipeline(goal, prof, s2)
+        a2 = planner.select_ab(r2)[0]
+        self.assertNotIn("res_noodle", [s.ref_id for s in a2.slots])
+        self.assertIn("res_dimsum", [s.ref_id for s in a2.slots])
+        for p in (path, runs):
+            if os.path.exists(p):
+                os.remove(p)
+
+    def test_output_mode_boundary(self):
+        intent, scenario, constraint, ranked = pipeline("情侣约会拍照出片找地方坐坐", self.profile)
+        plan = ranked[0]
+
+        user = render_user(plan, constraint)
+        self.assertEqual(set(user.keys()), set(USER_KEYS))
+        assert_user_safe(user)  # 不抛异常
+
+        verbose = render_verbose(plan, constraint,
+                                 candidate_pool=["a", "b"],
+                                 rejected_merchants=[{"merchant_id": "x", "reason": "售罄"}],
+                                 signals=LearnedSignals(user_pref_deltas={"vibe": 0.2}),
+                                 tool_io=[{"tool": "geo", "out": 12}])
+        # verbose 含 user 四项 + 额外项
+        for k in USER_KEYS:
+            self.assertIn(k, verbose)
+        for k in VERBOSE_EXTRA_KEYS:
+            self.assertIn(k, verbose)
+        # user 模式严禁泄露任何 verbose 字段
+        for k in VERBOSE_EXTRA_KEYS:
+            self.assertNotIn(k, user)
+        with self.assertRaises(AssertionError):
+            assert_user_safe(verbose)
 
     def test_fallback_participates_in_signals(self):
         intent, scenario, constraint, ranked = pipeline("我一个人拍照出片喝咖啡", self.profile)

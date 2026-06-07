@@ -212,3 +212,26 @@ core.replanner.replan(
 ```
 `ReplanDiff` 字段：`slot_index, field_from, field_to, locked, fallback_triggered,
 delta_route_minutes, delta_total`；方法 `describe()->str`。
+
+## replanner.replan_on_self_state（单人自身状态触发）
+```python
+core.replanner.replan_on_self_state(
+    session: SessionState,
+    self_state_text: str,        # 用户自述，如 "太累了，后面的活动取消" / "想多坐会慢慢吃"
+    profile=None, repo=None,
+) -> tuple[Optional[Plan], Optional[SelfStateDiff]]
+```
+无需外部反馈：检测到自身状态变化即直接重规划，写回 `session.current_plan` 并将
+`current_exec_state` 置 `"replanned"`。动作：`shorten`（取消首项之后的 slot）/
+`extend_meal`（用餐时长 +30、时间窗顺延）。辅助：`detect_self_state(text)->Optional[str]`。
+`SelfStateDiff` 字段：`action, trigger, detail, delta_route_minutes, locked`；方法 `describe()`。
+预置模拟输入：`mock/data/self_state_inputs.json`，经 `repo.self_state_input(id)` 读取。
+
+## 输出模式渲染（user / verbose 边界）
+- **导入路径**：`from models import render_user, render_verbose, assert_user_safe, format_user, format_verbose, USER_KEYS, VERBOSE_EXTRA_KEYS`（真源 `models/presenter.py`）。
+- `render_user(plan, constraint) -> dict`，**仅四键** `USER_KEYS = (basis, reassurance, reversible_funds, locked_variable)`。
+- `render_verbose(plan, constraint, candidate_pool, rejected_merchants, signals, tool_io) -> dict`，
+  在四键之外附加 `VERBOSE_EXTRA_KEYS = (candidate_pool, rejected_merchants, raw_scores, signal_injection, tool_io)`。
+- `assert_user_safe(view)`：user 视图若含任何 verbose 键则抛 `AssertionError`（防泄露守卫）。
+- `format_user/format_verbose(view)->str` 为对应文本渲染。
+- 端到端脚本：根目录 `e2e.py`（四场景 + 自身状态 replan + 两次会话 + 模式对照）。
