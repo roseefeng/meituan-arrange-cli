@@ -1,0 +1,511 @@
+{
+  "planning": {
+    "intent": {
+      "raw_goal": "一个人看书喝咖啡",
+      "vibe": "easy and predictable",
+      "setting": "nearby indoor-first route",
+      "effort": "low",
+      "spend": "moderate",
+      "meal_focus": "not too spicy",
+      "duration_hint": "half day",
+      "sensitivities": [
+        "rain",
+        "crowding"
+      ],
+      "party": "one person",
+      "fired_rules": [
+        "prefer_refundable",
+        "cap_route_minutes",
+        "keep_backup"
+      ]
+    },
+    "scenario_template": {
+      "id": "solo",
+      "label": "solo reset",
+      "base_constraints": [
+        "short transfer",
+        "payment confirmation",
+        "weather backup"
+      ],
+      "weight_overrides": {
+        "risk": 1.3,
+        "distance": 1.2,
+        "price": 0.9
+      },
+      "risk_extras": [
+        "rain",
+        "crowding"
+      ]
+    },
+    "plans": [
+      {
+        "id": "plan_A",
+        "title": "low-risk route with indoor backup（已结合学习偏好）",
+        "route_minutes": 42,
+        "slots": [
+          {
+            "id": "slot_1",
+            "name": "quiet cafe",
+            "merchant_id": "M101",
+            "geo": "31.2304,121.4737",
+            "window": "15:00-16:10"
+          },
+          {
+            "id": "slot_2",
+            "name": "bookstore activity",
+            "merchant_id": "M301",
+            "geo": "31.2320,121.4750",
+            "window": "16:20-17:20"
+          },
+          {
+            "id": "slot_3",
+            "name": "hotpot dinner",
+            "merchant_id": "M102",
+            "geo": "31.2333,121.4771",
+            "window": "17:40-19:00"
+          }
+        ],
+        "constraints": [
+          {
+            "id": "c_route",
+            "kind": "route",
+            "reason": "route stays under 60 minutes"
+          },
+          {
+            "id": "c_pay",
+            "kind": "payment",
+            "reason": "new paid deltas need confirmation"
+          },
+          {
+            "id": "c_weather",
+            "kind": "weather",
+            "reason": "indoor backup is available under rain"
+          }
+        ],
+        "locked_items": [
+          "start time",
+          "bookstore activity"
+        ],
+        "flexible_items": [
+          "dinner merchant",
+          "delivery dessert",
+          "学习偏好缓冲"
+        ],
+        "score": 0.89,
+        "rejected_merchants": [
+          "M201 too crowded",
+          "M305 no refund window"
+        ]
+      },
+      {
+        "id": "plan_B",
+        "title": "cheaper route with longer transfer",
+        "route_minutes": 58,
+        "slots": [
+          {
+            "id": "slot_1",
+            "name": "mall activity",
+            "merchant_id": "M401",
+            "geo": "31.2250,121.4800",
+            "window": "15:00-16:30"
+          },
+          {
+            "id": "slot_2",
+            "name": "noodle dinner",
+            "merchant_id": "M402",
+            "geo": "31.2280,121.4820",
+            "window": "17:00-18:00"
+          }
+        ],
+        "constraints": [
+          {
+            "id": "c_route",
+            "kind": "route",
+            "reason": "route stays under 60 minutes"
+          },
+          {
+            "id": "c_pay",
+            "kind": "payment",
+            "reason": "new paid deltas need confirmation"
+          },
+          {
+            "id": "c_weather",
+            "kind": "weather",
+            "reason": "indoor backup is available under rain"
+          }
+        ],
+        "locked_items": [
+          "budget cap"
+        ],
+        "flexible_items": [
+          "activity merchant",
+          "ride mode"
+        ],
+        "score": 0.78,
+        "rejected_merchants": [
+          "M118 expired coupon"
+        ]
+      }
+    ],
+    "chosen_plan": {
+      "id": "plan_A",
+      "title": "low-risk route with indoor backup（已结合学习偏好）",
+      "route_minutes": 42,
+      "slots": [
+        {
+          "id": "slot_1",
+          "name": "quiet cafe",
+          "merchant_id": "M101",
+          "geo": "31.2304,121.4737",
+          "window": "15:00-16:10"
+        },
+        {
+          "id": "slot_2",
+          "name": "bookstore activity",
+          "merchant_id": "M301",
+          "geo": "31.2320,121.4750",
+          "window": "16:20-17:20"
+        },
+        {
+          "id": "slot_3",
+          "name": "hotpot dinner",
+          "merchant_id": "M102",
+          "geo": "31.2333,121.4771",
+          "window": "17:40-19:00"
+        }
+      ],
+      "constraints": [
+        {
+          "id": "c_route",
+          "kind": "route",
+          "reason": "route stays under 60 minutes"
+        },
+        {
+          "id": "c_pay",
+          "kind": "payment",
+          "reason": "new paid deltas need confirmation"
+        },
+        {
+          "id": "c_weather",
+          "kind": "weather",
+          "reason": "indoor backup is available under rain"
+        }
+      ],
+      "locked_items": [
+        "start time",
+        "bookstore activity"
+      ],
+      "flexible_items": [
+        "dinner merchant",
+        "delivery dessert",
+        "学习偏好缓冲"
+      ],
+      "score": 0.89,
+      "rejected_merchants": [
+        "M201 too crowded",
+        "M305 no refund window"
+      ]
+    },
+    "candidate_count": 8,
+    "constraint_labels": [
+      "short transfer",
+      "payment confirmation",
+      "weather backup"
+    ],
+    "injected_signals": [
+      "repo:weather=rain",
+      "repo:merchant:M102 crowd risk",
+      "基于历史记录调整：偏好=22，场景覆盖=3"
+    ]
+  },
+  "chosen_plan": {
+    "id": "plan_A_fallback",
+    "title": "low-risk route with Cantonese claypot dinner fallback",
+    "route_minutes": 42,
+    "slots": [
+      {
+        "id": "slot_1",
+        "name": "quiet cafe",
+        "merchant_id": "M101",
+        "geo": "31.2304,121.4737",
+        "window": "15:00-16:10"
+      },
+      {
+        "id": "slot_2",
+        "name": "bookstore activity",
+        "merchant_id": "M301",
+        "geo": "31.2320,121.4750",
+        "window": "16:20-17:20"
+      },
+      {
+        "id": "slot_3",
+        "name": "Cantonese claypot dinner",
+        "merchant_id": "M218",
+        "geo": "31.2333,121.4771",
+        "window": "17:40-19:00"
+      }
+    ],
+    "constraints": [
+      {
+        "id": "c_route",
+        "kind": "route",
+        "reason": "route stays under 60 minutes"
+      },
+      {
+        "id": "c_pay",
+        "kind": "payment",
+        "reason": "new paid deltas need confirmation"
+      },
+      {
+        "id": "c_weather",
+        "kind": "weather",
+        "reason": "indoor backup is available under rain"
+      }
+    ],
+    "locked_items": [
+      "start time",
+      "bookstore activity"
+    ],
+    "flexible_items": [
+      "delivery dessert"
+    ],
+    "score": 0.89,
+    "rejected_merchants": [
+      "M201 too crowded",
+      "M305 no refund window"
+    ]
+  },
+  "resource_result": {
+    "fallback_event": {
+      "id": "fallback_001",
+      "reason": "M102 key resource unavailable during real repository check",
+      "affected_slot_id": "slot_3",
+      "from_item": "hotpot dinner at M102",
+      "to_item": "Cantonese claypot dinner at M218",
+      "locked_items": [
+        "quiet cafe",
+        "bookstore activity",
+        "route direction"
+      ],
+      "money_delta": 18,
+      "checks": [
+        "open_hours=pass",
+        "inventory=fail",
+        "crowd=fail",
+        "reserve=fail",
+        "groupbuy=pass",
+        "queue=number_taken",
+        "route=5min",
+        "weather=rain"
+      ]
+    },
+    "checks": [
+      "open_hours=pass",
+      "inventory=fail",
+      "crowd=fail",
+      "reserve=fail",
+      "groupbuy=pass",
+      "queue=number_taken",
+      "route=5min",
+      "weather=rain"
+    ],
+    "reversible_actions": [
+      "queue ticket Q102 position 12 wait 35min",
+      "cancel surprise delivery D4517"
+    ],
+    "payment_confirmations": [
+      "surprise delivery cake fee 12 y/n"
+    ],
+    "slot_window_updates": [
+      {
+        "slot_id": "slot_2",
+        "window": "use 35min queue window for nearby activity"
+      }
+    ]
+  },
+  "execution": {
+    "reversible_actions": [
+      "reserve Cantonese claypot dinner",
+      "hold bookstore seat",
+      "queue ticket Q102 position 12 wait 35min",
+      "cancel surprise delivery D4517"
+    ],
+    "payment_confirmations": [
+      "groupbuy claypot dinner coupon 186 y/n",
+      "surprise delivery cake fee 12 y/n"
+    ],
+    "tool_calls": [
+      {
+        "name": "mock_geo_minutes",
+        "status": "done",
+        "tool_input": {
+          "plan_id": "plan_A_fallback"
+        },
+        "tool_output": {
+          "minutes": 10
+        }
+      },
+      {
+        "name": "mock_reserve",
+        "status": "done",
+        "tool_input": {
+          "merchant_id": "M218",
+          "slot_time": "17:40-19:00",
+          "party_size": 2
+        },
+        "tool_output": {
+          "reservation_id": "R218",
+          "merchant_id": "M218",
+          "slot_time": "17:40-19:00",
+          "party_size": 2,
+          "status": "reserved",
+          "is_cancelable": true,
+          "cancel_deadline": "2026-06-07T16:40:00"
+        }
+      },
+      {
+        "name": "mock_groupbuy",
+        "status": "pending-confirm",
+        "tool_input": {
+          "merchant_id": "M218"
+        },
+        "tool_output": {
+          "groupbuy_id": "GB218",
+          "merchant_id": "M218",
+          "title": "claypot dinner coupon",
+          "original_price": 228,
+          "price": 186,
+          "save": 42,
+          "valid_until": "2026-06-30T23:59:59",
+          "stock": 12,
+          "is_available": true,
+          "status": "available"
+        }
+      },
+      {
+        "name": "mock_delivery",
+        "status": "done",
+        "tool_input": {
+          "item_type": "dessert",
+          "to_address": "31.2333,121.4771",
+          "scheduled_time": null
+        },
+        "tool_output": {
+          "delivery_id": "D2013",
+          "item_type": "dessert",
+          "eta": "2026-06-07T18:20:00",
+          "fee": 6,
+          "status": "created",
+          "is_cancelable": true,
+          "to_address": "31.2333,121.4771"
+        }
+      },
+      {
+        "name": "mock_mobility",
+        "status": "done",
+        "tool_input": {
+          "origin_geo": "31.2304,121.4737",
+          "dest_geo": "31.2320,121.4750",
+          "mode": "walk"
+        },
+        "tool_output": {
+          "route_minutes": 5,
+          "distance_km": 0.22,
+          "mode": "walk",
+          "traffic_level": "low",
+          "alternatives": [
+            {
+              "mode": "walk",
+              "route_minutes": 12,
+              "fee": 0
+            },
+            {
+              "mode": "taxi",
+              "route_minutes": 8,
+              "fee": 18
+            }
+          ]
+        }
+      },
+      {
+        "name": "mock_flashbuy",
+        "status": "done",
+        "tool_input": {
+          "item": "rain poncho"
+        },
+        "tool_output": {
+          "order_id": "D4622",
+          "item": "rain poncho",
+          "eta_min": 22,
+          "status": "created"
+        }
+      },
+      {
+        "name": "mock_pay",
+        "status": "needs-confirm",
+        "tool_input": {
+          "order_id": "GB218",
+          "amount": 186,
+          "method": "meituan_pay"
+        },
+        "tool_output": {
+          "payment_id": "P27455",
+          "order_id": "GB218",
+          "amount": 186,
+          "method": "meituan_pay",
+          "status": "requires_confirmation",
+          "paid_at": null,
+          "is_refundable": true
+        }
+      }
+    ]
+  },
+  "feedback_replan": {
+    "from_item": "bookstore activity plus dinner",
+    "to_item": "tea room plus nearby noodle dinner",
+    "locked_items": [
+      "start time",
+      "weather-safe indoor anchor"
+    ],
+    "reason": "self state changed, so walking and noise are reduced",
+    "score_delta": 0.04
+  },
+  "itinerary": {
+    "plan_id": "plan_A_fallback",
+    "title": "low-risk route with Cantonese claypot dinner fallback",
+    "member_timelines": {
+      "solo": [
+        {
+          "time": "14:40",
+          "text": "leave with buffer"
+        },
+        {
+          "time": "15:00",
+          "text": "quiet cafe"
+        },
+        {
+          "time": "17:40",
+          "text": "Cantonese claypot dinner"
+        }
+      ]
+    },
+    "prep_list": [
+      "umbrella",
+      "reservation QR",
+      "refundable groupbuy confirmation"
+    ]
+  },
+  "signals": {
+    "user_pref_deltas": [
+      "self_state: 我有点累，想要更轻松的路线"
+    ],
+    "merchant_signals": [
+      "hotpot dinner at M102 unavailable: M102 key resource unavailable during real repository check"
+    ],
+    "scenario_overrides": {
+      "prefer_refundable": true,
+      "avoid_crowded_dinner": true
+    },
+    "last_updated": "2026-06-07T23:04:25"
+  }
+}

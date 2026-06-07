@@ -1,0 +1,3922 @@
+{
+  "profile": {
+    "user_pref_deltas": [
+      "companion: Grandparent prefers less spicy dinner.",
+      "self_state: I feel tired and want a calmer route",
+      "prefer quiet seats",
+      "show seed preference",
+      "user: please make dinner lighter",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference",
+      "self_state: 我有点累，想要更轻松的路线",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference",
+      "user: 孩子吃不了辣，换个清淡的晚饭",
+      "prefer quiet seats",
+      "show seed preference",
+      "prefer quiet seats",
+      "show seed preference"
+    ],
+    "merchant_signals": [
+      "hotpot dinner at M102 unavailable: M102 key resource unavailable during real repository check",
+      "no merchant change"
+    ],
+    "scenario_overrides": {
+      "prefer_refundable": true,
+      "avoid_crowded_dinner": true,
+      "avoid_late_dinner": true
+    },
+    "last_updated": "2026-06-07T23:33:48"
+  },
+  "runs": [
+    {
+      "id": "run_20260607220935343",
+      "ts": "20260607220935343",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220935459",
+      "ts": "20260607220935459",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220935553",
+      "ts": "20260607220935553",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220935653",
+      "ts": "20260607220935653",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220935751",
+      "ts": "20260607220935751",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "I feel tired and want a calmer route",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220935855",
+      "ts": "20260607220935855",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220936354",
+      "ts": "20260607220936354",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220936540",
+      "ts": "20260607220936540",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607220936647",
+      "ts": "20260607220936647",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607221121904",
+      "ts": "20260607221121904",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221122028",
+      "ts": "20260607221122028",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221122132",
+      "ts": "20260607221122132",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221122235",
+      "ts": "20260607221122235",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221122328",
+      "ts": "20260607221122328",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "I feel tired and want a calmer route",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221122423",
+      "ts": "20260607221122423",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221122893",
+      "ts": "20260607221122893",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221123081",
+      "ts": "20260607221123081",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607221123190",
+      "ts": "20260607221123190",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607221417174",
+      "ts": "20260607221417174",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222232631",
+      "ts": "20260607222232631",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222235343",
+      "ts": "20260607222235343",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222237409",
+      "ts": "20260607222237409",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222239530",
+      "ts": "20260607222239530",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222241631",
+      "ts": "20260607222241631",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "I feel tired and want a calmer route",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222243725",
+      "ts": "20260607222243725",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222246557",
+      "ts": "20260607222246557",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222248832",
+      "ts": "20260607222248832",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222250743",
+      "ts": "20260607222250743",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607222329217",
+      "ts": "20260607222329217",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222424474",
+      "ts": "20260607222424474",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222427224",
+      "ts": "20260607222427224",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222429395",
+      "ts": "20260607222429395",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222431499",
+      "ts": "20260607222431499",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222433622",
+      "ts": "20260607222433622",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "I feel tired and want a calmer route",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222435732",
+      "ts": "20260607222435732",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222438509",
+      "ts": "20260607222438509",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222440785",
+      "ts": "20260607222440785",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607222442655",
+      "ts": "20260607222442655",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607223304516",
+      "ts": "20260607223304516",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223307258",
+      "ts": "20260607223307258",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223309333",
+      "ts": "20260607223309333",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223311403",
+      "ts": "20260607223311403",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223313486",
+      "ts": "20260607223313486",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "我有点累，想要更轻松的路线",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223315558",
+      "ts": "20260607223315558",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223318145",
+      "ts": "20260607223318145",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223320345",
+      "ts": "20260607223320345",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223322185",
+      "ts": "20260607223322185",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607223353192",
+      "ts": "20260607223353192",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223535714",
+      "ts": "20260607223535714",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223538450",
+      "ts": "20260607223538450",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223540510",
+      "ts": "20260607223540510",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223542586",
+      "ts": "20260607223542586",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223544662",
+      "ts": "20260607223544662",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "我有点累，想要更轻松的路线",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223546745",
+      "ts": "20260607223546745",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223549409",
+      "ts": "20260607223549409",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223551613",
+      "ts": "20260607223551613",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223553481",
+      "ts": "20260607223553481",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607223651766",
+      "ts": "20260607223651766",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223654523",
+      "ts": "20260607223654523",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223656659",
+      "ts": "20260607223656659",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223658774",
+      "ts": "20260607223658774",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223700872",
+      "ts": "20260607223700872",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "我有点累，想要更轻松的路线",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223702974",
+      "ts": "20260607223702974",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223705822",
+      "ts": "20260607223705822",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223708091",
+      "ts": "20260607223708091",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607223709994",
+      "ts": "20260607223709994",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607223736586",
+      "ts": "20260607223736586",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230131556",
+      "ts": "20260607230131556",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230134296",
+      "ts": "20260607230134296",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230136397",
+      "ts": "20260607230136397",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230138495",
+      "ts": "20260607230138495",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230140587",
+      "ts": "20260607230140587",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "我有点累，想要更轻松的路线",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230142679",
+      "ts": "20260607230142679",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230145430",
+      "ts": "20260607230145430",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230147673",
+      "ts": "20260607230147673",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230149558",
+      "ts": "20260607230149558",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607230243148",
+      "ts": "20260607230243148",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230245880",
+      "ts": "20260607230245880",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230247949",
+      "ts": "20260607230247949",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230250010",
+      "ts": "20260607230250010",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230252093",
+      "ts": "20260607230252093",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "我有点累，想要更轻松的路线",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230254157",
+      "ts": "20260607230254157",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230256705",
+      "ts": "20260607230256705",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230258873",
+      "ts": "20260607230258873",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230300724",
+      "ts": "20260607230300724",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607230344207",
+      "ts": "20260607230344207",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230416854",
+      "ts": "20260607230416854",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230419619",
+      "ts": "20260607230419619",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230421693",
+      "ts": "20260607230421693",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230423772",
+      "ts": "20260607230423772",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230425869",
+      "ts": "20260607230425869",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "我有点累，想要更轻松的路线",
+        "source": "self_state"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230427935",
+      "ts": "20260607230427935",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230430508",
+      "ts": "20260607230430508",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230432705",
+      "ts": "20260607230432705",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230434579",
+      "ts": "20260607230434579",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607230502723",
+      "ts": "20260607230502723",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230632220",
+      "ts": "20260607230632220",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩，想要轻松一点",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "Grandparent prefers less spicy dinner.",
+        "source": "companion"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607230848641",
+      "ts": "20260607230848641",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩，想要轻松一点",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "孩子吃不了辣，换个清淡的晚饭",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607231226244",
+      "ts": "20260607231226244",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231228963",
+      "ts": "20260607231228963",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231231032",
+      "ts": "20260607231231032",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231233110",
+      "ts": "20260607231233110",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231235168",
+      "ts": "20260607231235168",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231237244",
+      "ts": "20260607231237244",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231240012",
+      "ts": "20260607231240012",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231242195",
+      "ts": "20260607231242195",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231244049",
+      "ts": "20260607231244049",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607231312339",
+      "ts": "20260607231312339",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607231437793",
+      "ts": "20260607231437793",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232051373",
+      "ts": "20260607232051373",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩，想要轻松一点",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232547958",
+      "ts": "20260607232547958",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232901769",
+      "ts": "20260607232901769",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232915396",
+      "ts": "20260607232915396",
+      "intent": {
+        "raw_goal": "周末带娃出去",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232918137",
+      "ts": "20260607232918137",
+      "intent": {
+        "raw_goal": "周末带娃放电",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232920252",
+      "ts": "20260607232920252",
+      "intent": {
+        "raw_goal": "和闺蜜下午茶",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232922337",
+      "ts": "20260607232922337",
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232924420",
+      "ts": "20260607232924420",
+      "intent": {
+        "raw_goal": "一个人看书喝咖啡",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one person",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232926514",
+      "ts": "20260607232926514",
+      "intent": {
+        "raw_goal": "history seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232929299",
+      "ts": "20260607232929299",
+      "intent": {
+        "raw_goal": "reflect seed",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232931523",
+      "ts": "20260607232931523",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607232933373",
+      "ts": "20260607232933373",
+      "intent": {
+        "raw_goal": "weekend family route",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "please make dinner lighter",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607233159491",
+      "ts": "20260607233159491",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩，想要轻松一点",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "id": "run_20260607233235778",
+      "ts": "20260607233235778",
+      "intent": {
+        "raw_goal": "周末带孩子出去玩，想要轻松一点",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback_feedback",
+      "feedback": {
+        "text": "孩子吃不了辣，换个清淡的晚饭",
+        "source": "user"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": false
+    },
+    {
+      "id": "run_20260607233323034",
+      "ts": "20260607233323034",
+      "intent": {
+        "raw_goal": "周末出去玩",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "one adult and one child",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "chosen_plan_id": "plan_A_fallback",
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "replanned": true,
+      "signals_emitted": true,
+      "fallback_triggered": true
+    },
+    {
+      "signals_emitted": true,
+      "fallback_triggered": true,
+      "feedback": {
+        "text": "",
+        "source": "plan"
+      },
+      "intent": {
+        "raw_goal": "约会夜",
+        "vibe": "easy and predictable",
+        "setting": "nearby indoor-first route",
+        "effort": "low",
+        "spend": "moderate",
+        "meal_focus": "not too spicy",
+        "duration_hint": "half day",
+        "sensitivities": [
+          "rain",
+          "crowding"
+        ],
+        "party": "two people",
+        "fired_rules": [
+          "prefer_refundable",
+          "cap_route_minutes",
+          "keep_backup"
+        ]
+      },
+      "replanned": true,
+      "id": "run_20260607233348275",
+      "chosen_plan_id": "plan_A_fallback",
+      "ts": "20260607233348275"
+    }
+  ]
+}

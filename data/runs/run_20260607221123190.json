@@ -1,0 +1,456 @@
+{
+  "previous_run_id": "run_20260607221123081",
+  "planning": {
+    "intent": {
+      "raw_goal": "weekend family route",
+      "vibe": "easy and predictable",
+      "setting": "nearby indoor-first route",
+      "effort": "low",
+      "spend": "moderate",
+      "meal_focus": "not too spicy",
+      "duration_hint": "half day",
+      "sensitivities": [
+        "rain",
+        "crowding"
+      ],
+      "party": "one adult and one child",
+      "fired_rules": [
+        "prefer_refundable",
+        "cap_route_minutes",
+        "keep_backup"
+      ]
+    },
+    "scenario_template": {
+      "id": "family",
+      "label": "family outing",
+      "base_constraints": [
+        "short transfer",
+        "payment confirmation",
+        "weather backup"
+      ],
+      "weight_overrides": {
+        "risk": 1.3,
+        "distance": 1.2,
+        "price": 0.9
+      },
+      "risk_extras": [
+        "rain",
+        "crowding"
+      ]
+    },
+    "plans": [
+      {
+        "id": "plan_A",
+        "title": "low-risk route with indoor backup with learned preference",
+        "route_minutes": 42,
+        "slots": [
+          {
+            "id": "slot_1",
+            "name": "parent-child cafe",
+            "merchant_id": "M101",
+            "geo": "31.2304,121.4737",
+            "window": "15:00-16:10"
+          },
+          {
+            "id": "slot_2",
+            "name": "bookstore activity",
+            "merchant_id": "M301",
+            "geo": "31.2320,121.4750",
+            "window": "16:20-17:20"
+          },
+          {
+            "id": "slot_3",
+            "name": "hotpot dinner",
+            "merchant_id": "M102",
+            "geo": "31.2333,121.4771",
+            "window": "17:40-19:00"
+          }
+        ],
+        "constraints": [
+          {
+            "id": "c_route",
+            "kind": "route",
+            "reason": "route stays under 60 minutes"
+          },
+          {
+            "id": "c_pay",
+            "kind": "payment",
+            "reason": "new paid deltas need confirmation"
+          },
+          {
+            "id": "c_weather",
+            "kind": "weather",
+            "reason": "indoor backup is available under rain"
+          }
+        ],
+        "locked_items": [
+          "start time",
+          "bookstore activity"
+        ],
+        "flexible_items": [
+          "dinner merchant",
+          "delivery dessert",
+          "learned preference buffer"
+        ],
+        "score": 0.89,
+        "rejected_merchants": [
+          "M201 too crowded",
+          "M305 no refund window"
+        ]
+      },
+      {
+        "id": "plan_B",
+        "title": "cheaper route with longer transfer",
+        "route_minutes": 58,
+        "slots": [
+          {
+            "id": "slot_1",
+            "name": "mall activity",
+            "merchant_id": "M401",
+            "geo": "31.2250,121.4800",
+            "window": "15:00-16:30"
+          },
+          {
+            "id": "slot_2",
+            "name": "noodle dinner",
+            "merchant_id": "M402",
+            "geo": "31.2280,121.4820",
+            "window": "17:00-18:00"
+          }
+        ],
+        "constraints": [
+          {
+            "id": "c_route",
+            "kind": "route",
+            "reason": "route stays under 60 minutes"
+          },
+          {
+            "id": "c_pay",
+            "kind": "payment",
+            "reason": "new paid deltas need confirmation"
+          },
+          {
+            "id": "c_weather",
+            "kind": "weather",
+            "reason": "indoor backup is available under rain"
+          }
+        ],
+        "locked_items": [
+          "budget cap"
+        ],
+        "flexible_items": [
+          "activity merchant",
+          "ride mode"
+        ],
+        "score": 0.78,
+        "rejected_merchants": [
+          "M118 expired coupon"
+        ]
+      }
+    ],
+    "chosen_plan": {
+      "id": "plan_A",
+      "title": "low-risk route with indoor backup with learned preference",
+      "route_minutes": 42,
+      "slots": [
+        {
+          "id": "slot_1",
+          "name": "parent-child cafe",
+          "merchant_id": "M101",
+          "geo": "31.2304,121.4737",
+          "window": "15:00-16:10"
+        },
+        {
+          "id": "slot_2",
+          "name": "bookstore activity",
+          "merchant_id": "M301",
+          "geo": "31.2320,121.4750",
+          "window": "16:20-17:20"
+        },
+        {
+          "id": "slot_3",
+          "name": "hotpot dinner",
+          "merchant_id": "M102",
+          "geo": "31.2333,121.4771",
+          "window": "17:40-19:00"
+        }
+      ],
+      "constraints": [
+        {
+          "id": "c_route",
+          "kind": "route",
+          "reason": "route stays under 60 minutes"
+        },
+        {
+          "id": "c_pay",
+          "kind": "payment",
+          "reason": "new paid deltas need confirmation"
+        },
+        {
+          "id": "c_weather",
+          "kind": "weather",
+          "reason": "indoor backup is available under rain"
+        }
+      ],
+      "locked_items": [
+        "start time",
+        "bookstore activity"
+      ],
+      "flexible_items": [
+        "dinner merchant",
+        "delivery dessert",
+        "learned preference buffer"
+      ],
+      "score": 0.89,
+      "rejected_merchants": [
+        "M201 too crowded",
+        "M305 no refund window"
+      ]
+    },
+    "candidate_count": 8,
+    "constraint_labels": [
+      "short transfer",
+      "payment confirmation",
+      "weather backup"
+    ],
+    "injected_signals": [
+      "repo:weather=rain",
+      "repo:merchant:M102 crowd risk",
+      "based on history adjustment: prefs=7, overrides=3"
+    ]
+  },
+  "chosen_plan": {
+    "id": "plan_A_fallback_feedback",
+    "title": "low-risk route with claypot fallback adjusted by feedback",
+    "route_minutes": 42,
+    "slots": [
+      {
+        "id": "slot_1",
+        "name": "parent-child cafe",
+        "merchant_id": "M101",
+        "geo": "31.2304,121.4737",
+        "window": "15:00-16:10"
+      },
+      {
+        "id": "slot_2",
+        "name": "bookstore activity",
+        "merchant_id": "M301",
+        "geo": "31.2320,121.4750",
+        "window": "16:20-17:20"
+      },
+      {
+        "id": "slot_3",
+        "name": "Cantonese claypot dinner",
+        "merchant_id": "M218",
+        "geo": "31.2333,121.4771",
+        "window": "17:40-19:00"
+      }
+    ],
+    "constraints": [
+      {
+        "id": "c_route",
+        "kind": "route",
+        "reason": "route stays under 60 minutes"
+      },
+      {
+        "id": "c_pay",
+        "kind": "payment",
+        "reason": "new paid deltas need confirmation"
+      },
+      {
+        "id": "c_weather",
+        "kind": "weather",
+        "reason": "indoor backup is available under rain"
+      }
+    ],
+    "locked_items": [
+      "start time",
+      "bookstore activity",
+      "route direction"
+    ],
+    "flexible_items": [
+      "feedback-adjusted meal",
+      "arrival buffer"
+    ],
+    "score": 0.89,
+    "rejected_merchants": [
+      "M201 too crowded",
+      "M305 no refund window"
+    ]
+  },
+  "resource_result": {
+    "fallback_event": null,
+    "checks": [
+      "open_hours=pass",
+      "inventory=pass",
+      "crowd=pass",
+      "valid_until=pass",
+      "weather=rain"
+    ]
+  },
+  "execution": {
+    "reversible_actions": [
+      "reserve Cantonese claypot dinner",
+      "hold bookstore seat"
+    ],
+    "payment_confirmations": [
+      "groupbuy family set coupon 168"
+    ],
+    "tool_calls": [
+      {
+        "name": "mock_geo_minutes",
+        "status": "done",
+        "tool_input": {
+          "plan_id": "plan_A_fallback_feedback"
+        },
+        "tool_output": {
+          "minutes": 42
+        }
+      },
+      {
+        "name": "mock_reserve",
+        "status": "done",
+        "tool_input": {
+          "merchant_id": "M218",
+          "window": "17:40-19:00"
+        },
+        "tool_output": {
+          "reservation_id": "R1001",
+          "merchant_id": "M218",
+          "window": "17:40-19:00",
+          "refundable": true
+        }
+      },
+      {
+        "name": "mock_groupbuy",
+        "status": "pending-confirm",
+        "tool_input": {
+          "merchant_id": "M218"
+        },
+        "tool_output": {
+          "id": "GB218",
+          "merchant_id": "M218",
+          "title": "family set coupon",
+          "price": 168,
+          "save": 42,
+          "valid": true
+        }
+      },
+      {
+        "name": "mock_delivery",
+        "status": "done",
+        "tool_input": {
+          "item": "dessert",
+          "to_geo": "31.2333,121.4771"
+        },
+        "tool_output": {
+          "item": "dessert",
+          "to_geo": "31.2333,121.4771",
+          "eta_min": 28,
+          "fee": 6
+        }
+      },
+      {
+        "name": "mock_mobility",
+        "status": "done",
+        "tool_input": {
+          "from_geo": "31.2304,121.4737",
+          "to_geo": "31.2320,121.4750"
+        },
+        "tool_output": {
+          "from_geo": "31.2304,121.4737",
+          "to_geo": "31.2320,121.4750",
+          "mode": "walk",
+          "minutes": 12,
+          "fee": 0
+        }
+      },
+      {
+        "name": "mock_flashbuy",
+        "status": "done",
+        "tool_input": {
+          "item": "rain poncho"
+        },
+        "tool_output": {
+          "order_id": "F778",
+          "item": "rain poncho",
+          "eta_min": 22
+        }
+      },
+      {
+        "name": "mock_pay",
+        "status": "needs-confirm",
+        "tool_input": {
+          "amount": 168
+        },
+        "tool_output": {
+          "status": "requires_confirmation",
+          "amount": 168
+        }
+      }
+    ]
+  },
+  "feedback_replan": {
+    "from_item": "hotpot dinner",
+    "to_item": "Cantonese claypot dinner",
+    "locked_items": [
+      "start time",
+      "bookstore activity",
+      "route direction"
+    ],
+    "reason": "companion preference lowers spice risk while preserving route",
+    "score_delta": 0.06
+  },
+  "itinerary": {
+    "plan_id": "plan_A_fallback_feedback",
+    "title": "low-risk route with claypot fallback adjusted by feedback",
+    "member_timelines": {
+      "adult": [
+        {
+          "time": "14:40",
+          "text": "leave with buffer"
+        },
+        {
+          "time": "15:00",
+          "text": "parent-child cafe"
+        },
+        {
+          "time": "17:40",
+          "text": "Cantonese claypot dinner"
+        }
+      ],
+      "child": [
+        {
+          "time": "14:50",
+          "text": "arrive directly at first stop"
+        },
+        {
+          "time": "16:20",
+          "text": "join bookstore activity"
+        },
+        {
+          "time": "19:00",
+          "text": "ride home together"
+        }
+      ]
+    },
+    "prep_list": [
+      "umbrella",
+      "reservation QR",
+      "refundable groupbuy confirmation"
+    ]
+  },
+  "signals": {
+    "user_pref_deltas": [
+      "user: please make dinner lighter"
+    ],
+    "merchant_signals": [
+      "no merchant change"
+    ],
+    "scenario_overrides": {
+      "prefer_refundable": true,
+      "avoid_crowded_dinner": false
+    },
+    "last_updated": "2026-06-07T22:11:23"
+  }
+}

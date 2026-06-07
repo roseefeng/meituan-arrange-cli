@@ -1,0 +1,43 @@
+{
+  "user_pref_deltas": [
+    "companion: Grandparent prefers less spicy dinner.",
+    "self_state: I feel tired and want a calmer route",
+    "prefer quiet seats",
+    "show seed preference",
+    "user: please make dinner lighter",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference",
+    "self_state: 我有点累，想要更轻松的路线",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference",
+    "user: 孩子吃不了辣，换个清淡的晚饭",
+    "prefer quiet seats",
+    "show seed preference",
+    "prefer quiet seats",
+    "show seed preference"
+  ],
+  "merchant_signals": [
+    "hotpot dinner at M102 unavailable: M102 key resource unavailable during real repository check",
+    "no merchant change"
+  ],
+  "scenario_overrides": {
+    "prefer_refundable": true,
+    "avoid_crowded_dinner": true,
+    "avoid_late_dinner": true
+  },
+  "last_updated": "2026-06-07T23:33:48"
+}
