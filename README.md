@@ -46,4 +46,4 @@ raw_goal ──▶ intent_parser ──▶ IntentFrame
 python demo.py
 ```
 
-`demo.py` 跑通验收四项：四句对照、solo 路由、动线权重开/关 rank 对照、两次会话学习注入。
+
