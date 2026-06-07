@@ -1,0 +1,13 @@
+[
+  {"id": "gb_familyhot", "merchant_id": "res_familyhot", "title": "家宴四人套餐", "price": 268.0, "save": 92.0},
+  {"id": "gb_buffet", "merchant_id": "res_buffet", "title": "海鲜自助双人券", "price": 398.0, "save": 120.0},
+  {"id": "gb_hotpot", "merchant_id": "res_hotpot", "title": "火锅双人套餐", "price": 158.0, "save": 66.0},
+  {"id": "gb_ktv", "merchant_id": "act_ktv", "title": "KTV欢唱3小时", "price": 99.0, "save": 81.0},
+  {"id": "gb_escape", "merchant_id": "act_escape", "title": "密室组队票", "price": 128.0, "save": 52.0},
+  {"id": "gb_bistro", "merchant_id": "res_bistro", "title": "法式双人晚餐", "price": 366.0, "save": 134.0},
+  {"id": "gb_cafe", "merchant_id": "res_cafe", "title": "手冲咖啡套餐", "price": 49.0, "save": 31.0},
+  {"id": "gb_salad", "merchant_id": "res_salad", "title": "轻食单人午市", "price": 35.0, "save": 15.0},
+  {"id": "gb_themepark", "merchant_id": "act_themepark", "title": "游乐场畅玩票", "price": 199.0, "save": 101.0},
+  {"id": "gb_yoga", "merchant_id": "act_yoga", "title": "瑜伽体验单次", "price": 59.0, "save": 41.0},
+  {"id": "gb_brunch", "merchant_id": "res_brunch", "title": "早午餐单人套餐", "price": 78.0, "save": 22.0}
+]
