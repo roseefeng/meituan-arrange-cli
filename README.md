@@ -137,5 +137,3 @@ python cli/main.py demo solo               # CLI 走完一个场景主线（fami
 
 接口契约见 `EXPORTS.md`，阶段说明见 `scripts/README_STEP4.md`。
 产品说明文档：https://icnaohlo7li1.feishu.cn/wiki/GLlLwtODEic8rEksOG7cwyuUnCe?from=from_copylink
-=======
->>>>>>> 35b5aa6435ee2aa0839c29dc3e67a42a1312d3c1
